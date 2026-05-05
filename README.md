@@ -175,7 +175,6 @@ Copyright (c) 2026 TMOQ_wcsc36 Contributors
 ## リンク
 
 - [やねうら王公式](http://yaneuraou.yaneu.com/)
-- [電竜戦公式](https://denryu-sen.jp/)
 
 ## 参考資料
 
