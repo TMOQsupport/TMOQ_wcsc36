@@ -1,6 +1,6 @@
 # TMOQ_wcsc36
 
-TMOQ(特大もっきゅ) Wcsc36版 - Rust言語による将棋エンジン
+TMOQ(特大もっきゅ) wcsc36版 - Rust言語による将棋エンジン
 
 ## 概要
 
@@ -92,16 +92,6 @@ cargo build --release --bin engine
 target/release/params.json
 ```
 
-### パラメータ最適化
-
-Pythonスクリプトを使用した自動調整：
-
-```bash
-python tune_params.py
-```
-
-詳細は `docs/PARAMETER_TUNING_GUIDE.md` を参照。
-
 ## プロジェクト構成
 
 ```
@@ -112,17 +102,20 @@ TMOQ_wcsc36/
 │   ├── bitboard.rs         # Bitboard実装
 │   ├── piece.rs            # 駒の定義
 │   ├── hand.rs             # 持ち駒管理
+│   ├── attacks.rs          # 駒の利き計算
+│   ├── mate1ply.rs         # 1手詰め判定 
 │   ├── move.rs             # 指し手表現
+│   ├── movegen.rs          # 合法手生成
 │   ├── position.rs         # 局面管理・評価関数
 │   ├── eval_params.rs      # 評価パラメータ
 │   ├── usi.rs              # 探索エンジン
-│   ├── book.rs             # 定跡管理
 │   └── bin/
 │       └── engine.rs       # エンジン本体
-├── tune_params.py          # パラメータ調整スクリプト
-├── test_single_param.py    # 単一パラメータテスト
+├── target/release/
+│   ├── params.json         # パラメータファイル
+│   └── book/
+│       └── yaneuraoh.db    # 定跡ファイル
 ├── Cargo.toml              # プロジェクト設定
-├── params.json             # パラメータファイル
 └── README.md               # このファイル
 ```
 
