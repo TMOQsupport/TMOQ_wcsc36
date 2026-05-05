@@ -1,0 +1,20 @@
+[package]
+name = "cshogi_rust"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+rand = "0.8"  # ← この行を追加
+
+# ... 他の依存関係 ...
+
+[[bin]]
+name = "engine"
+path = "src/bin/engine.rs"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
